@@ -28,6 +28,8 @@ hr{
 .Link{
     text-decoration: none;
     padding: 0.5rem 1rem;
+    /* margin-top: 1rem;
+    margin-bottom: 1rem; */
 
 }
 
@@ -112,7 +114,7 @@ hr{
 
 .footer{
     background-color:var(--primary-color);
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
     text-align: center;
     color: white;
 }
@@ -121,6 +123,12 @@ hr{
     color: white;
 }
 
+.footer .footer-header{
+    font-weight: bold;
+    font-size: large;
+    margin-top: 0rem;
+    margin-bottom: 5rem;
+}
 .footer ul{
     padding-inline-start: 0px;
 }
