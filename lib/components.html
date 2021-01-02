@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Library</title>
+    <link href ="/style.css" rel ="stylesheet"/>
+</head>
+<body>
+    <h1>Welcome to my component Library</h1>
+    <p>Creating this library so that I can use
+        the components later for faster development.</p> 
+    
+    <hr >
+
+
+    <h2>@Typography</h2>
+    <h1>Biggest heading</h1>
+    <h2>Relatively smaller heading</h2>
+    <p>This is the general text which is free flowing and
+         wraps in the end like a paragraph.</p>
+    <small>This one is even smaller text.</small>
+
+    <hr>
+
+    <h2>@Containers</h2>
+     
+    <h3>fluid container</h3>
+    <div class ="container">This is a fluid container and it will go till the end of the page.</div>
+    
+    <h3>Centered container</h3>
+    <div class ="container container-centre">This is a centered container and it will go till the specified width.</div>
+
+    <hr>
+
+    <h2>@Links</h2>
+    <a class ="Link link-primary" href="/">Primary Link</a>
+    <a class ="Link link-secondary" href="/">Secondary Link</a>
+
+    <hr>
+
+    <h2>@Lists</h2>
+
+    <h3>Unordered list</h3>
+    <p>This list won't have bullet</p>
+
+    <ul class="list-non-bullet">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h3>Unordered inline list</h3>
+    <ul class="list-non-bullet">
+        <li class="list-item-inline">Item 1</li>
+        <li class="list-item-inline">Item 2</li>
+        <li class="list-item-inline">Item 3</li>
+    </ul>
+
+    <h3>Reverse ordered list</h3>
+    <ol reversed>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <hr>
+
+    <h2>@Nav</h2>
+    <nav class="navigation container">
+        <div class="nav-brand">IAmBrand</div>
+        <ul class="list-non-bullet nav-tabs">
+            <li class="list-item-inline">
+                <a class="Link link-active" href="/">Home</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="Link" href="/">Products</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="Link" href="/">About</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="Link" href="/">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <h3>@header</h3>
+
+    <header class="hero">
+        <img class="hero-img" src="images/hero.svg"/>
+        <h1 class="hero-headings">Heading inside <span style="color: var(--primary-color)">hero</span></h1>
+    </header>
+
+    <hr>
+
+    <h3>@Section</h3>
+    <section class="section">
+        <div class="container container-centre">
+            <h1>white section</h1>
+            <p>This will have a white background</p>
+        </div>
+    </section>
+
+    <section class="section ow">
+        <div class="container container-centre">
+            <h1>Gray section</h1>
+            <p>This will include a off white background</p>
+        </div>
+        
+    </section>
+
+    <hr>
+
+    <h3>@Footer</h3>
+    <footer class="footer">
+        <div class="footer-header">Some headings in footer</div>
+        <ul class="footer-links list-non-bullet">
+            <li class="list-item-inline">
+                <a class ="Link" href="/">
+                    social 1
+                </a>
+            </li>
+            <li class="list-item-inline">
+                <a class ="Link" href="/">
+                    social 2
+                </a>
+            </li>
+            <li class="list-item-inline">
+                <a class ="Link" href="/">
+                    social 3
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+
+
+
+</body>
+</html>
