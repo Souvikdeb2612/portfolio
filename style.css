@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root{
-    --primary-color: #7C3AED;
+    --primary-color:#7C3AED;
     --dark-color:#6B7280;
     --offwhite-color:#F3F4F6;
 }
@@ -22,6 +22,19 @@ hr{
 .container-centre{
     max-width: 600px;
     margin: auto;
+}
+
+/**spaces**/
+.space-medium{
+    padding-bottom: 2rem;
+}
+
+.space-low{
+    padding-bottom: 1rem;
+}
+
+.space-high{
+    padding-bottom: 5rem;
 }
 
 /** Links **/
@@ -83,7 +96,12 @@ hr{
 
 .hero{
     padding: 2rem;
+    padding-top: 5rem;
 }
+
+
+
+
 
 .hero-img{
     max-width: 350px;
