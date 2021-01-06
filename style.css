@@ -6,6 +6,10 @@
     --offwhite-color:#F3F4F6;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Montserrat', sans-serif;
     margin: 0px;
@@ -199,7 +203,7 @@ form{
 }
 
 .submit:hover {
-    background-color: var(--offwhite-color);
+    background-color: #6D28D9;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -217,3 +221,8 @@ form{
 }
 
 
+.link-hover:hover{
+    font-size: 0.8rem;
+    color: #DDD6FE;
+    transition-duration: 0.5s;
+}
