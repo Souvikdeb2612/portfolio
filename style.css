@@ -161,6 +161,59 @@ hr{
 }
 
 
+form{
+    /* margin-top:50px; */
+    /* transition: all 4s ease-in-out; */
+    
+}
 
+.form-control{
+    border:2px solid #E5E7EB;
+    width:50%;
+    height:0.5rem;
+    display:block;
+    margin:auto;
+    padding: 1rem;
+    background-color: var(--offwhite-color);
+
+}
+
+
+
+.submit{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    color: white;
+    background:var(--primary-color);
+    border-color: transparent;
+    text-align: center;
+    /* font-weight: bold; */
+    letter-spacing:0.05rem;
+    display:block;
+    margin:auto;
+    
+    
+
+}
+
+.submit:hover {
+    background-color: var(--offwhite-color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.message{
+    border:2px solid #E5E7EB;
+    width:50%;
+    height:100px;
+    display:block;
+    margin:auto;
+    padding: 1rem;
+    background-color: var(--offwhite-color);
+
+}
 
 
