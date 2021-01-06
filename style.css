@@ -222,7 +222,7 @@ form{
 
 
 .link-hover:hover{
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     color: #DDD6FE;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
 }
