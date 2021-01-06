@@ -1,23 +1,23 @@
 <?php
-    $to ="souvikdeb26@gmail.com"
-    $subject ='New potfolio message';  
+$to ="souvikdeb26@gmail.com"
+$subject ="New potfolio message";  
 
-    $name=$_POST['name'];
-    $email=$_POST['email'];
-    $message =$_POST['message'];
+$name=$_POST['name'];
+$email=$_POST['email'];
+$message =$_POST['message'];
 
-    $mail_from='deb.souvik2612@gmail.com';
+    // $mail_from='deb.souvik2612@gmail.com';
     
     // $email_body="Username: $name.\n".
     //             "User Email: $email.\n".
     //             "User Message: $message.\n";
 
     
-    $headers .="From: $email\r\n";
+$headers .= "Content-Type: text/html;\r\n";
+$headers .="From: $email\r\n";
 
-    mail($to,$subject,$message,$headers);
-    echo"Email has been sent! Thank you $name";
-    header("Location:index.html");
+mail($to,$subject,$message,$headers);
+// header("Location:index.html");
 
 
 
