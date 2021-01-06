@@ -4,6 +4,9 @@
     --primary-color:#7C3AED;
     --dark-color:#6B7280;
     --offwhite-color:#F3F4F6;
+    --hover-color: #EDE9FE;
+    --primary-hover: #5B21B6;
+    --secondary-hover:#EDE9FE;
 }
 
 html {
@@ -55,6 +58,17 @@ hr{
     border-radius: 0.5rem;
     color: white;
 }
+
+.link-primary:hover{
+    background-color: var(--primary-hover);
+    transition-duration: 0.2s;
+}
+
+.link-secondary:hover{
+    background-color:var(--secondary-hover);
+    transition-duration: 0.2s;
+}
+
 
 .link-secondary{
     color: var(--primary-color);
@@ -223,6 +237,6 @@ form{
 
 .link-hover:hover{
     font-size: 0.88rem;
-    color: #DDD6FE;
+    color: var(--hover-color);
     transition-duration: 0.2s;
 }
