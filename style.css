@@ -127,6 +127,25 @@ hr{
     margin: auto;
 }
 
+.pro-img{
+    max-width: 310px;
+    display:block;
+    margin: auto;
+}
+
+.blo-img{
+    max-width: 300px;
+    display:block;
+    margin: auto;
+}
+
+.con-img{
+    max-width: 500px;
+    display:block;
+    margin: auto;
+}
+
+
 .hero .hero-headings{
     padding-top: 1rem;
     color: var(--dark-color);
