@@ -134,13 +134,13 @@ hr{
 }
 
 .blo-img{
-    max-width: 300px;
+    max-width: 250px;
     display:block;
     margin: auto;
 }
 
 .con-img{
-    max-width: 500px;
+    max-width: 448px;
     display:block;
     margin: auto;
 }
@@ -150,6 +150,21 @@ hr{
     padding-top: 1rem;
     color: var(--dark-color);
     text-align: center;
+}
+
+
+/**scroll button**/
+
+.scroll-down{
+    color: var(--primary-color);
+    display: block;
+    margin-left: 50%;
+    
+}
+
+.scroll-down:hover{
+    color: var(--primary-hover);
+    font-weight:bold;
 }
 
 /**section**/
