@@ -92,9 +92,11 @@ hr{
     color: white;
     padding: 1rem;
     border-bottom-left-radius: 1rem;
+    
 }
 .navigation .nav-tabs{
     text-align: right;
+    overflow: hidden;
 }
 
 .navigation .Link{
@@ -109,6 +111,12 @@ hr{
 .navigation .link-active{
     font-weight: bold;
 }
+
+
+li.dropdown{
+    display: none;
+}
+
 
 /**header**/
 
@@ -268,4 +276,17 @@ hr{
     font-size: 0.88rem;
     color: var(--hover-color);
     transition-duration: 0.2s;
+}
+
+
+/* Mobile view */
+@media screen and (max-width: 680px){
+    ul.nav-tabs li:not(:nth-child(1)){
+        display:none;
+    }
+
+    ul.nav-tabs li.dropdown{
+        display: block;
+        float: right;
+    }
 }
