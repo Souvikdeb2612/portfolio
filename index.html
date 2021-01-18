@@ -12,10 +12,12 @@
     
 </head>
 <body>
+
+    <script src="app.js" ></script>
     
     <nav class="navigation container">
         <div class="nav-brand">SouvikDeb</div>
-        <ul class="list-non-bullet nav-tabs">
+        <ul class="list-non-bullet nav-tabs" id="dropdownClick">
             <li class="list-item-inline">
                 <a class="Link link-active" href="/">Home</a>
             </li>
@@ -28,9 +30,9 @@
             <li class="list-item-inline">
                 <a class="link-hover Link" href="/contact.html">Contact</a>
             </li>
-            <!-- <li class="list-item-inline dropdown">
-                <a >&#9776;</a>
-            </li> -->
+            <li class="dropdown">
+                <a class="Link" href="" onclick="dropdownMenu()">&#9776;</a>
+            </li>
         </ul>
     </nav>
 

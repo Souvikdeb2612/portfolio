@@ -280,7 +280,7 @@ li.dropdown{
 
 
 /* Mobile view */
-/* @media screen and (max-width: 680px){
+@media screen and (max-width: 680px){
     ul.nav-tabs li:not(:nth-child(1)){
         display:none;
     }
@@ -289,4 +289,6 @@ li.dropdown{
         display: block;
         float: right;
     }
-} */
+
+    .
+}
