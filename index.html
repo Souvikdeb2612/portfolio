@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Souvik Deb — Builder &amp; Product Maker</title>
+  <meta name="description" content="Souvik Deb builds and ships products. Tech Lead at NavGurukul. Maker of Oscar, Socrates, and more.">
+  <meta name="keywords" content="Souvik Deb, builder, product maker, indie hacker, TypeScript, React, AI tools, NavGurukul, Aestheria Studio, Assam">
+  <meta name="author" content="Souvik Deb">
+  <meta property="og:title" content="Souvik Deb — Builder & Product Maker">
+  <meta property="og:description" content="I find the problem. Build the fix. Ship it. Tech Lead at NavGurukul. Maker of Oscar and Socrates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://souvikdeb.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@souvikdeb26">
+  <meta name="theme-color" content="#0D0C0A">
+  <link rel="canonical" href="https://souvikdeb.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <img src="avatar.png" alt="Souvik Deb" class="loader-avatar">
+      <div class="loader-bar-track">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav id="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Souvik Deb home">
+        <img src="avatar.png" alt="Souvik Deb">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-footer">
+      <a href="https://github.com/souvikdeb2612" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://twitter.com/souvikdeb26" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://linkedin.com/in/souvikdeb26" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="hero-eyebrow" id="heroEyebrow">
+        <span class="eyebrow-line" aria-hidden="true"></span>
+        <span>Builder</span>
+        <span class="eyebrow-sep" aria-hidden="true">·</span>
+        <span>Ships Products</span>
+      </div>
+      <div class="hero-badge" id="heroBadge">
+        <span class="badge-pulse" aria-hidden="true"></span>Currently building
+      </div>
+      <h1 class="hero-name" id="heroName" aria-label="Souvik Deb">
+        <span class="hn-row" aria-hidden="true">
+          <span class="char">S</span><span class="char">o</span><span class="char">u</span><span class="char">v</span><span class="char">i</span><span class="char">k</span>
+        </span>
+        <span class="hn-row" aria-hidden="true">
+          <span class="char">D</span><span class="char">e</span><span class="char">b</span><span class="char accent-char">.</span>
+        </span>
+      </h1>
+      <div class="hero-meta" id="heroMeta">
+        <span>Assam, India</span>
+        <span class="hm-sep" aria-hidden="true"></span>
+        <span>Since 2020</span>
+      </div>
+      <p class="hero-desc" id="heroDesc">
+        I find the problem. Build the fix. Ship it.
+      </p>
+      <div class="hero-actions" id="heroActions">
+        <a href="#projects" class="btn btn-fill magnetic">
+          View Work
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="hero-socials">
+          <a href="https://github.com/souvikdeb2612" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="GitHub">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/souvikdeb26" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="Twitter / X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/souvikdeb26" target="_blank" rel="noopener" class="social-icon magnetic" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-badge-ring" id="heroBadgeRing" aria-hidden="true">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="badge-ring-path" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1-116,0"/>
+        </defs>
+        <text font-size="11" font-weight="600" letter-spacing="2.5" fill="currentColor">
+          <textPath href="#badge-ring-path">SHIPPING ✦ BUILDING ✦ ITERATING ✦ </textPath>
+        </text>
+      </svg>
+      <span class="badge-ring-center">✦</span>
+    </div>
+
+    <div class="hero-scroll" id="heroScroll" aria-hidden="true">
+      <div class="scroll-bar"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>TypeScript</span><span class="msep">✦</span>
+        <span>React</span><span class="msep">✦</span>
+        <span>Node.js</span><span class="msep">✦</span>
+        <span>Three.js</span><span class="msep">✦</span>
+        <span>GSAP</span><span class="msep">✦</span>
+        <span>Figma</span><span class="msep">✦</span>
+        <span>Creative Dev</span><span class="msep">✦</span>
+        <span>Full Stack</span><span class="msep">✦</span>
+        <span>UI / UX</span><span class="msep">✦</span>
+        <span>Tailwind CSS</span><span class="msep">✦</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span>TypeScript</span><span class="msep">✦</span>
+        <span>React</span><span class="msep">✦</span>
+        <span>Node.js</span><span class="msep">✦</span>
+        <span>Three.js</span><span class="msep">✦</span>
+        <span>GSAP</span><span class="msep">✦</span>
+        <span>Figma</span><span class="msep">✦</span>
+        <span>Creative Dev</span><span class="msep">✦</span>
+        <span>Full Stack</span><span class="msep">✦</span>
+        <span>UI / UX</span><span class="msep">✦</span>
+        <span>Tailwind CSS</span><span class="msep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-bg-num" aria-hidden="true">01</div>
+      <div class="section-label reveal-up">About</div>
+      <div class="about-grid">
+        <div class="about-left">
+          <h2 class="section-title reveal-up">
+            I ship things<br>
+            that <em>stick.</em>
+          </h2>
+          <div class="about-body">
+            <p class="reveal-up">
+              Builder from Assam, India. I find problems worth solving, then build and ship the thing that fixes them. Five years across startups, EdTech, and my own products — now focused on tools that outlive the sprint.
+            </p>
+            <p class="reveal-up">
+              Tech Lead at <strong>NavGurukul</strong> by day — shipping EdTech at scale for students across India. Outside that, I build and launch my own: <strong>Oscar</strong>, a voice-first writing and transcription tool; <strong>Socrates</strong>, an AI-powered debugging platform. More in the pipeline.
+            </p>
+          </div>
+          <div class="about-caps reveal-up">
+            <div class="cap-item">
+              <span class="cap-n">01</span>
+              <div>
+                <span class="cap-title">Frontend</span>
+                <span class="cap-sub">React · TypeScript · Three.js</span>
+              </div>
+            </div>
+            <div class="cap-item">
+              <span class="cap-n">02</span>
+              <div>
+                <span class="cap-title">Product</span>
+                <span class="cap-sub">Full-stack · EdTech · LMS</span>
+              </div>
+            </div>
+            <div class="cap-item">
+              <span class="cap-n">03</span>
+              <div>
+                <span class="cap-title">Creative</span>
+                <span class="cap-sub">GSAP · Motion · UI/UX</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-meta reveal-up">
+            <div class="meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Assam, India
+            </div>
+            <div class="meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+              Currently building
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="skills-block reveal-up">
+            <div class="skills-label">Tech I work with</div>
+            <div class="skills-list">
+              <span class="skill">TypeScript</span>
+              <span class="skill">React</span>
+              <span class="skill">Next.js</span>
+              <span class="skill">Node.js</span>
+              <span class="skill">Python</span>
+              <span class="skill">GraphQL</span>
+              <span class="skill">Supabase</span>
+              <span class="skill">PostgreSQL</span>
+              <span class="skill">Redux</span>
+              <span class="skill">LLMs</span>
+              <span class="skill">RAG</span>
+              <span class="skill">Ollama</span>
+              <span class="skill">Hermes</span>
+              <span class="skill">Vercel AI SDK</span>
+              <span class="skill">Tailwind CSS</span>
+              <span class="skill">Three.js</span>
+              <span class="skill">GSAP</span>
+              <span class="skill">Figma</span>
+              <span class="skill">Git</span>
+              <span class="skill">Vercel</span>
+            </div>
+          </div>
+          <div class="stats-row reveal-up">
+            <div class="stat-item">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Years exp.</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">10+</span>
+              <span class="stat-label">Projects shipped</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">6</span>
+              <span class="stat-label">Roles &amp; companies</span>
+            </div>
+          </div>
+          <div class="about-cta reveal-up">
+            <a href="mailto:souvikdeb26@gmail.com" class="btn btn-ghost magnetic">Say hello →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS · HORIZONTAL REEL ── -->
+  <section class="section section-dark" id="projects">
+    <div class="container">
+      <div class="section-bg-num" aria-hidden="true">02</div>
+      <div class="section-label reveal-up">Selected Work</div>
+      <h2 class="section-title reveal-up">Things I've<br><em>shipped.</em></h2>
+      <p class="reel-hint reveal-up" aria-hidden="true">Drag or scroll →</p>
+    </div>
+
+    <div class="projects-reel" id="projectsReel" aria-label="Project showcase, drag to scroll">
+      <div class="projects-reel-inner">
+
+        <!-- 01 — Oscar -->
+        <article class="project-card reveal-up" data-tilt>
+          <a href="https://oscar.samyarth.org" target="_blank" rel="noopener" class="project-card-inner" draggable="false">
+            <div class="project-preview preview-oscar">
+              <div class="preview-num">01</div>
+              <div class="preview-browser dark-browser">
+                <div class="browser-bar">
+                  <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
+                  <div class="browser-url light-url">oscar.samyarth.org</div>
+                </div>
+                <div class="browser-body oscar-ui">
+                  <div class="bb-oscar-tagline"></div>
+                  <div class="bb-oscar-widget">
+                    <div class="bb-oscar-mic" aria-hidden="true">◉</div>
+                    <div class="bb-oscar-wave" aria-hidden="true">
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="bb-oscar-kbd">⌃ Space</div>
+                  </div>
+                  <div class="bb-oscar-features">
+                    <div class="bb-oscar-feat">Stream</div>
+                    <div class="bb-oscar-feat">Minutes</div>
+                    <div class="bb-oscar-feat">Scribble</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <h3 class="project-name">Oscar</h3>
+                <span class="project-link-icon" aria-hidden="true">↗</span>
+              </div>
+              <p class="project-desc">Voice-first writing for people who type too much. Dictate into any app with Ctrl+Space, transcribe meetings, and turn voice notes into structured summaries.</p>
+              <div class="project-tags">
+                <span class="ptag">TypeScript</span>
+                <span class="ptag">React</span>
+                <span class="ptag">Voice AI</span>
+                <span class="ptag live">Live ↗</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 02 — Socrates -->
+        <article class="project-card reveal-up" data-tilt>
+          <a href="https://socrates-opal.vercel.app" target="_blank" rel="noopener" class="project-card-inner" draggable="false">
+            <div class="project-preview preview-socrates">
+              <div class="preview-num">02</div>
+              <div class="preview-browser dark-browser">
+                <div class="browser-bar">
+                  <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
+                  <div class="browser-url light-url">socrates-opal.vercel.app</div>
+                </div>
+                <div class="browser-body socrates-ui">
+                  <div class="bb-socrates-editor">
+                    <div class="bb-socrates-sidebar">
+                      <div class="bb-soc-file"></div>
+                      <div class="bb-soc-file active"></div>
+                      <div class="bb-soc-file"></div>
+                    </div>
+                    <div class="bb-socrates-code">
+                      <div class="bb-soc-line error"></div>
+                      <div class="bb-soc-line"></div>
+                      <div class="bb-soc-line short"></div>
+                      <div class="bb-soc-line"></div>
+                    </div>
+                  </div>
+                  <div class="bb-socrates-terminal"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <h3 class="project-name">Socrates</h3>
+                <span class="project-link-icon" aria-hidden="true">↗</span>
+              </div>
+              <p class="project-desc">LeetCode for debugging — fix broken code in a browser-based IDE with Monaco editor, real terminal, and an AI tutor that guides without giving answers.</p>
+              <div class="project-tags">
+                <span class="ptag">Next.js</span>
+                <span class="ptag">TypeScript</span>
+                <span class="ptag">AI</span>
+                <span class="ptag live">Live ↗</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 03 — Cafe Connect -->
+        <article class="project-card reveal-up" data-tilt>
+          <a href="https://cafe-connect-ten.vercel.app" target="_blank" rel="noopener" class="project-card-inner" draggable="false">
+            <div class="project-preview preview-cafe">
+              <div class="preview-num">03</div>
+              <div class="preview-browser">
+                <div class="browser-bar">
+                  <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
+                  <div class="browser-url">cafe-connect.vercel.app</div>
+                </div>
+                <div class="browser-body">
+                  <div class="bb-nav"></div>
+                  <div class="bb-hero"></div>
+                  <div class="bb-cards">
+                    <div class="bb-card"></div>
+                    <div class="bb-card"></div>
+                    <div class="bb-card"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <h3 class="project-name">Cafe Connect</h3>
+                <span class="project-link-icon" aria-hidden="true">↗</span>
+              </div>
+              <p class="project-desc">Full-featured café management and booking platform with real-time reservations, admin dashboard, and seamless UX.</p>
+              <div class="project-tags">
+                <span class="ptag">TypeScript</span>
+                <span class="ptag">React</span>
+                <span class="ptag live">Live ↗</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 04 — Aestheria Studio -->
+        <article class="project-card project-card-dark reveal-up" data-tilt>
+          <a href="https://github.com/souvikdeb2612/aestheria.studio" target="_blank" rel="noopener" class="project-card-inner" draggable="false">
+            <div class="project-preview preview-aestheria">
+              <div class="preview-num light">04</div>
+              <div class="preview-browser dark-browser">
+                <div class="browser-bar">
+                  <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
+                  <div class="browser-url light-url">aestheria.studio</div>
+                </div>
+                <div class="browser-body">
+                  <div class="bb-logo">✦ Aestheria</div>
+                  <div class="bb-hero dark-hero"></div>
+                  <div class="bb-cols">
+                    <div class="bb-col"></div>
+                    <div class="bb-col"></div>
+                    <div class="bb-col"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <h3 class="project-name">Aestheria Studio</h3>
+                <span class="project-link-icon" aria-hidden="true">↗</span>
+              </div>
+              <p class="project-desc">Landing page for my creative development studio — designed and built to embody the Aestheria brand from the ground up.</p>
+              <div class="project-tags">
+                <span class="ptag">HTML</span>
+                <span class="ptag">CSS</span>
+                <span class="ptag">Branding</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- 05 — GreenBasket -->
+        <article class="project-card reveal-up" data-tilt>
+          <a href="https://github.com/souvikdeb2612/greenbasket-veggies" target="_blank" rel="noopener" class="project-card-inner" draggable="false">
+            <div class="project-preview preview-green">
+              <div class="preview-num">05</div>
+              <div class="preview-browser">
+                <div class="browser-bar">
+                  <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
+                  <div class="browser-url">greenbasket-veggies</div>
+                </div>
+                <div class="browser-body">
+                  <div class="bb-nav"></div>
+                  <div class="bb-hero short-hero"></div>
+                  <div class="bb-cards four">
+                    <div class="bb-card sm"></div>
+                    <div class="bb-card sm"></div>
+                    <div class="bb-card sm"></div>
+                    <div class="bb-card sm"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <h3 class="project-name">GreenBasket</h3>
+                <span class="project-link-icon" aria-hidden="true">↗</span>
+              </div>
+              <p class="project-desc">Clean, conversion-focused static website for a fresh produce grocery shop. Fast, functional, and mobile-first.</p>
+              <div class="project-tags">
+                <span class="ptag">JavaScript</span>
+                <span class="ptag">HTML</span>
+                <span class="ptag">CSS</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="projects-footer reveal-up">
+        <a href="https://github.com/souvikdeb2612" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
+          More on GitHub →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORK ── -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-bg-num" aria-hidden="true">03</div>
+      <div class="section-label reveal-up">Experience</div>
+      <h2 class="section-title reveal-up">Where I've<br><em>worked.</em></h2>
+      <div class="work-list">
+
+        <div class="work-item reveal-up">
+          <div class="work-left">
+            <span class="work-period">Aug 2023 — Present</span>
+            <span class="work-status">Current</span>
+          </div>
+          <div class="work-right">
+            <div class="work-header">
+              <h3 class="work-role">Tech Lead</h3>
+              <a href="https://navgurukul.org" target="_blank" rel="noopener" class="work-company">
+                NavGurukul ↗
+              </a>
+            </div>
+            <p class="work-desc">
+              Leading product and engineering for EdTech tools used by students across India. Own the full stack — from architecture decisions to shipped features. Operate like a founder inside a mission-driven org.
+            </p>
+            <div class="work-tags">
+              <span class="ptag">React.js</span>
+              <span class="ptag">TypeScript</span>
+              <span class="ptag">Full-Stack</span>
+              <span class="ptag">EdTech</span>
+              <span class="ptag">Hybrid</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item reveal-up">
+          <div class="work-left">
+            <span class="work-period">2025 — Present</span>
+            <span class="work-status">Active</span>
+          </div>
+          <div class="work-right">
+            <div class="work-header">
+              <h3 class="work-role">Founder &amp; Creative Developer</h3>
+              <a href="https://github.com/souvikdeb2612/aestheria.studio" target="_blank" rel="noopener" class="work-company">
+                Aestheria Studio ↗
+              </a>
+            </div>
+            <p class="work-desc">
+              Running a boutique creative development studio — designing and building exceptional web experiences for clients who care about craft, aesthetics, and results. From brand identity to deployed product.
+            </p>
+            <div class="work-tags">
+              <span class="ptag">Design</span>
+              <span class="ptag">TypeScript</span>
+              <span class="ptag">Client Work</span>
+              <span class="ptag">Branding</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item reveal-up">
+          <div class="work-left">
+            <span class="work-period">Aug 2021 — Dec 2023</span>
+          </div>
+          <div class="work-right">
+            <div class="work-header">
+              <h3 class="work-role">Founding Engineer</h3>
+              <span class="work-company-plain">AirCampus</span>
+            </div>
+            <p class="work-desc">
+              Early-stage engineer at an EdTech startup — helped build the core platform from scratch over 3+ years. Took ownership of the frontend product, shipped key features, and wore many hats as part of a lean founding team.
+            </p>
+            <div class="work-tags">
+              <span class="ptag">React.js</span>
+              <span class="ptag">HTML5</span>
+              <span class="ptag">JavaScript</span>
+              <span class="ptag">Git</span>
+              <span class="ptag">Startup</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section contact-section contact-dark" id="contact">
+    <div class="container">
+      <div class="section-bg-num" aria-hidden="true">04</div>
+      <div class="section-label reveal-up">Contact</div>
+      <div class="contact-inner">
+        <h2 class="contact-headline reveal-up">
+          Let's build<br>
+          something<span class="accent-char">.</span>
+        </h2>
+        <p class="contact-sub reveal-up">
+          Always up for interesting collaborations, side projects, and good conversations.<br>
+          Don't be a stranger.
+        </p>
+        <div class="contact-actions reveal-up">
+          <a href="mailto:souvikdeb26@gmail.com" class="contact-email-big" id="contactEmail">
+            <span class="email-text">souvikdeb26@gmail.com</span>
+            <span class="email-arr" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="contact-divider reveal-up" aria-hidden="true">
+          <span class="contact-div-line"></span>
+          <span class="contact-div-text">or find me on</span>
+          <span class="contact-div-line"></span>
+        </div>
+        <div class="contact-links reveal-up">
+          <a href="https://github.com/souvikdeb2612" target="_blank" rel="noopener" class="clink magnetic">GitHub</a>
+          <span class="clink-sep" aria-hidden="true">—</span>
+          <a href="https://linkedin.com/in/souvikdeb26" target="_blank" rel="noopener" class="clink magnetic">LinkedIn</a>
+          <span class="clink-sep" aria-hidden="true">—</span>
+          <a href="https://twitter.com/souvikdeb26" target="_blank" rel="noopener" class="clink magnetic">Twitter</a>
+          <span class="clink-sep" aria-hidden="true">—</span>
+          <a href="https://github.com/souvikdeb2612/aestheria.studio" target="_blank" rel="noopener" class="clink magnetic">Aestheria</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer footer-dark">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Souvik Deb</span>
+        <span class="footer-copy">Designed &amp; built with care · 2026</span>
+        <a href="#hero" class="footer-top magnetic">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
