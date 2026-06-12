@@ -883,11 +883,12 @@ button { border: none; background: none; cursor: none; font-family: inherit; col
 .preview-num.light { color: rgba(255, 255, 255, 0.4); }
 
 /* Preview gradient themes */
-.preview-cafe      { background: linear-gradient(135deg, #1E40AF 0%, #0EA5E9 100%); }
-.preview-oscar     { background: linear-gradient(135deg, #050D1A 0%, #0F2848 55%, #0284C7 100%); }
-.preview-aestheria { background: linear-gradient(135deg, #0F0F0F 0%, #1C1C1C 100%); border-bottom: 1px solid #2A2A2A; }
-.preview-green     { background: linear-gradient(135deg, #064E3B 0%, #059669 60%, #34D399 100%); }
-.preview-socrates  { background: linear-gradient(135deg, #0A0A0F 0%, #0D1B2A 55%, #1A1040 100%); }
+.preview-cafe        { background: linear-gradient(135deg, #1E40AF 0%, #0EA5E9 100%); }
+.preview-oscar       { background: linear-gradient(135deg, #050D1A 0%, #0F2848 55%, #0284C7 100%); }
+.preview-aestheria   { background: linear-gradient(135deg, #0F0F0F 0%, #1C1C1C 100%); border-bottom: 1px solid #2A2A2A; }
+.preview-green       { background: linear-gradient(135deg, #064E3B 0%, #059669 60%, #34D399 100%); }
+.preview-socrates    { background: linear-gradient(135deg, #0A0A0F 0%, #0D1B2A 55%, #1A1040 100%); }
+.preview-breadcrumm  { background: linear-gradient(135deg, #0A0A0A 0%, #111111 60%, #181308 100%); border-bottom: 1px solid #252015; }
 
 /* Socrates IDE mockup */
 .socrates-ui { display: flex; flex-direction: column; gap: 4px; padding: 6px; }
@@ -1083,6 +1084,28 @@ button { border: none; background: none; cursor: none; font-family: inherit; col
   color: var(--green);
   background: rgba(34, 197, 94, 0.08);
 }
+.ptag.building {
+  border-color: rgba(251, 191, 36, 0.3);
+  color: #FBBF24;
+  background: rgba(251, 191, 36, 0.08);
+}
+
+/* Breadcrumm menubar app mockup */
+.breadcrumm-ui { display: flex; flex-direction: column; gap: 6px; padding: 8px; }
+.bb-breadcrumm-header { display: flex; align-items: center; justify-content: space-between; }
+.bb-breadcrumm-title { font-size: 0.55rem; font-weight: 600; color: rgba(255,255,255,0.75); font-family: monospace; }
+.bb-breadcrumm-time { font-size: 0.5rem; color: rgba(255,255,255,0.3); font-family: monospace; }
+.bb-breadcrumm-task { height: 6px; background: rgba(251,191,36,0.25); border-radius: 3px; width: 75%; }
+.bb-breadcrumm-trail { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; }
+.bb-breadcrumm-item { display: flex; align-items: center; gap: 5px; }
+.bb-bc-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.bb-bc-dot.editor   { background: rgba(139,92,246,0.8); }
+.bb-bc-dot.browser  { background: rgba(59,130,246,0.8); }
+.bb-bc-dot.terminal { background: rgba(34,197,94,0.8); }
+.bb-bc-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; }
+.bb-bc-bar.long   { width: 70%; }
+.bb-bc-bar.medium { width: 50%; }
+.bb-bc-bar.short  { width: 35%; }
 .projects-footer { margin-top: 56px; display: flex; justify-content: center; }
 
 /* ── Dark Section (Projects) ── */
